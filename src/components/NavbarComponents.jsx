@@ -1,31 +1,32 @@
 import React from "react";
-import logo from "../assets/superaser-illustrion-icon.png";
-import IconGrid from "../icons/IconBxGridSmall";
-import { IconBxsMoon, IconBxsSun } from "./IconsComponents";
+import logo from "../assets/superaser-logo.png";
+import { IconBxHome, IconBxMenu } from "./IconsComponents";
 
 const NavbarComponents = () => {
   return (
-    <nav className="dark:bg-slate-800 bg-slate-200 p-4">
-      <div className="container mx-auto">
+    <nav className="p-4 dark:bg-slate-800 bg-gray-50 font-poppins">
+      <div className="container mx-auto ">
         <div className="flex justify-between">
           {/* LOGO */}
           <img src={logo} alt="" width="32px" height="32px" />
 
-          {/* DARK MODE ICON */}
-          <div>
-            <IconBxsMoon className="dark:hidden  text-sky-900 rounded-md lg:hidden" width="32px" height="32px" />
-            <IconBxsSun className="hidden dark:block text-sky-900 rounded-md lg:hidden" width="32px" height="32px" />
-          </div>
-
           {/* MENU MOBILE */}
-          <IconGrid className="text-white bg-sky-900 rounded-md lg:hidden" width="32px" height="32px" />
+          <IconBxMenu className="text-white rounded-md bg-sky-700 lg:hidden" width="32px" height="32px" />
         </div>
-        <ul className="hidden">
-          <li>Home</li>
-          <li>About</li>
-          <li>Service</li>
-          <li>Project</li>
-        </ul>
+        <div className="fixed bottom-0 left-0 right-0 p-4 bg-white border">
+          <ul className="flex justify-between">
+            <li>
+              <a href="" className="flex flex-col items-center justify-center gap-1">
+                <IconBxHome />
+                <span className="text-sm font-normal">Home</span>
+              </a>
+            </li>
+            <li>About</li>
+            <li>Skill</li>
+            <li>Project</li>
+            <li>Contact</li>
+          </ul>
+        </div>
       </div>
     </nav>
   );
